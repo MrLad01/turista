@@ -13,6 +13,12 @@
         padding: 0;
     }
     
+    html, body {
+        margin: 0;
+        /* padding: 0; */
+        height: 100%;
+    }
+    
     /* Global styles */
     body {
         background-color: #F6F6F6;
@@ -56,20 +62,21 @@
         font-weight: 600;
         text-decoration: none;
     }
-    .experience-card{
-        /* border: 1px solid #333; */
-        border-radius: 10px;
-        height: 100%;
-        width: 100%;
+    .experience-card {
+        aspect-ratio: 1;  /* Make cards square */
         position: relative;
+        border-radius: 10px;
+        overflow: hidden;  /* Keep gradient and image within borders */
         box-shadow: 0px 2px 8px 0px #88888829;
-        /* border: 2px solid #333; */
     }
+    
     .experience-card > img {
         height: 100%;
         width: 100%;
-        object-fit: contain;
-        z-index: -1;
+        object-fit: cover;  /* Changed from contain to cover */
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     .experience-card > .label{
         bottom: 10px;
@@ -97,14 +104,15 @@
         top: 10px;
         z-index: 10;
     }
+    main{
+        margin-bottom: 20px;
+    }
     footer{
         background-color: #fff;
         padding: 10px 15px 30px 15px;
-        /* position: absolute;
-        bottom: 0; */
         width: 100vw;
         margin-left: -15px;
-        margin-top: 50px;
+        margin-top: auto;
     }
     .footer{
         align-items: center;
