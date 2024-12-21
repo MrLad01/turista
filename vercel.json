@@ -21,7 +21,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "/home.html"
+        "dest": "/$1.html"
       }
     ]
   }
