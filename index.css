@@ -1,9 +1,3 @@
-/* .wix-madefor-text-<uniquifier> {
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-} */
-
 @media (max-width: 500px) {    
     /* Reset some default styles */
     * {
@@ -36,6 +30,9 @@
         position: relative;
         margin: 0; /* Add this explicitly */
     }
+    .active-page{
+        border: 2px solid #FD226E;
+    }
     .back-gradient{
         width: 100%;
         height: 100%;
@@ -43,6 +40,33 @@
         /* opacity: 0.1; */
         position: absolute;
         /* z-index: 1 */
+    }
+    .badge-choice, .badge-you{
+        position: relative;
+    }
+    .badge-choice-text{
+        color: #F6F6F6;
+        font-size: 8px;
+        font-weight: 700;
+        left: 4px;
+        line-height: 8px;
+        position: absolute;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        top: 4px;
+    }
+    .badge-choice-text2{
+        color: #F6F6F6;
+        font-size: 8px;
+        font-weight: 700;
+        left: 4px;
+        line-height: 8px;
+        position: absolute;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        top: 8px;
     }
     .badge-container{
         padding: 12px 12px 6px 0;
@@ -52,7 +76,6 @@
         z-index: 10;
     }
     .badge-inner-container{
-        /* border: 1px solid #fff; */
         padding: 0;
         position: relative;
         z-index: 10;
@@ -90,6 +113,66 @@
         grid-template-columns: 1fr 1fr;
         margin-bottom: 10px;
         width: 100%;
+    }
+    .card-heading{
+        align-items: center;
+        color: #00001E;
+        font-size: 14px;
+        font-weight: 400;
+        justify-content: space-between;
+        line-height: 16px;
+        margin-bottom: 12px;
+        margin-top: 24px;
+        text-align: right;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .card-heading > a{
+        color: #FD226E;
+        text-decoration: none;
+    }
+    .card-inner{
+        /* border: 1px solid #333; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .card-inner > .desc > h4{
+        color: #898787;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .card-inner > .desc > .tag{
+        align-items: center;
+        background-color: #F0F0F0;
+        border-radius: 16px ;
+        gap: 2px;
+        height: 24px;
+        justify-content: center;
+        opacity: 0px;
+        width: 64px;
+
+    }
+    .card-inner > h3{
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14px;
+        min-width: 140px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .card-inner > .desc{
+        align-items: center;
+        justify-content: space-between;
     }
     .controls-container {
         align-items: center;
@@ -175,7 +258,6 @@
         overflow: hidden;  /* Keep gradient and image within borders */
         box-shadow: 0px 2px 8px 0px #88888829;
     }
-    
     .experience-card > img {
         height: 100%;
         width: 100%;
@@ -210,6 +292,26 @@
         top: 10px;
         z-index: 10;
     }
+    .explore-content{
+        align-items: center;
+        background-color: #89878714;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        margin-top: -14px;
+        padding: 12px 16px;
+    }
+    .explore-content > p{
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .explore-content > p > a {
+        color: #FD226E;
+        text-decoration: none;
+    } 
     .flex{
         display: flex;
     }
@@ -239,10 +341,11 @@
         height: 248px;
     }
     .landing-card-desc{
-        height: 88px;
         background-color: #fff;
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
+        height: 88px;
+        padding: 12px;
     }
     .landing-card-img{
         height: 160px;
@@ -281,6 +384,29 @@
         display: flex;
         justify-content: end;
         padding: 15px;
+    }
+    .page-head{
+        margin-bottom: 36px;
+    }
+    .page-head > a > .back-button{
+        align-items: center;
+        background-color: #FFF;
+        border-radius: 8px;
+        box-shadow: 0px 2px 8px 0px #88888829;
+        display: flex;
+        gap: 8px;
+        height: 40px;
+        justify-content: center;
+        margin-bottom: 22px;
+        width: 40px;
+    }
+    .page-heading-text{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
     }
     .search-bar{
         position: relative;
@@ -336,6 +462,7 @@
     }
     .welcome-link{
         color: #FD226E;
+        cursor: pointer;
         font-size: 14px;
         font-style: 600;
         line-height: 14px;
@@ -348,6 +475,86 @@
         margin-top: 20px;
         size: 24px;
     }
+    /* Modal Background */
+    .welcome-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+    /* Modal Content */
+    .welcome-modal-content {
+        position: relative;
+        background-color: white;
+        margin: 15% auto;
+        padding: 20px;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    /* Close Button */
+    .welcome-close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #666;
+    }
+    /* Modal Title */
+    .welcome-modal-title {
+        color: #00001E;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 24px;
+        margin-bottom: 20px;
+        margin-top: 26px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    /* Section Titles */
+    .welcome-section-title {
+        color: #00001E;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 10px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+
+    }
+    /* Modal Text Content */
+    .welcome-modal-text {
+        background-color: #F6F6F6;
+        color: #00001E;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        margin-bottom: 20px;
+        padding: 16px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    /* Link Styles */
+    .welcome-modal-link {
+        color: #FD226E;
+        text-decoration: none;
+    }
+    /* Sections Spacing */
+    .welcome-modal-section {
+        margin-bottom: 20px;
+    }
+
+
     @keyframes smoothScroll {
         0% {
           transform: translateX(0);
