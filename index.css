@@ -30,6 +30,9 @@
         position: relative;
         margin: 0; /* Add this explicitly */
     }
+    .absolute{
+        position: absolute;
+    }
     .active-page{
         border: 2px solid #FD226E;
     }
@@ -251,6 +254,11 @@
         font-weight: 600;
         text-decoration: none;
     }
+    .dotted-lines{
+        height: 0.5px;
+        width: 100%;
+        border: 2px dashed #F0F0F0;
+    }
     .experience-card {
         aspect-ratio: 1;  /* Make cards square */
         position: relative;
@@ -292,6 +300,69 @@
         top: 10px;
         z-index: 10;
     }
+    .explore-about-summary{
+        background-color: white;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        position: relative;
+    }
+    .explore-about-summary > button{
+        background: none;
+        border: none;
+        bottom: 20px;
+        color: #FD226E;
+        font-size: 15px;
+        font-weight: 600;
+        position: absolute;
+        right: 20px;
+    }
+    .explore-about-summary > p{
+        display: -webkit-box;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        margin-bottom: 30px;
+        overflow: hidden;
+        text-align: left;
+        text-decoration-skip-ink: none;
+        text-underline-position: from-font;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+    }
+    .explore-background{
+        margin-left: -7.6px; 
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+    }
+    .explore-background > .back {
+        background-color: #bcbcdb;
+        background: linear-gradient(180deg, rgba(41, 30, 77, 0.95) 0%, rgba(40, 31, 70, 0) 100%);
+        position: absolute;
+        padding-left: 7.6px;
+        margin-top: -7.6px;
+        width: 102%;
+        height: 24rem;
+        top: 0;
+        z-index: 1;
+    }
+    .explore-background > img{
+        z-index: -10;
+        position: relative;
+        margin-top: -27.6px;
+    }
+    .explore-body{
+        padding-left: 7.6px;
+        margin-top: -40px;
+    }
+    .explore-body-about{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 30px;
+    }
     .explore-content{
         align-items: center;
         background-color: #89878714;
@@ -312,11 +383,17 @@
         color: #FD226E;
         text-decoration: none;
     } 
+    .explore-head{
+        height: 24rem;
+    }
     .flex{
         display: flex;
     }
     .gap-2{
         gap: 0.5rem;
+    }
+    .h-fit{
+        height: fit-content;
     }
     .h-full{
         height: 100%;
@@ -363,6 +440,12 @@
         margin-bottom: 20px;
         flex: 1;  
     }
+    .mb-10{
+        margin-bottom: 2.5rem;
+    }
+    .mb-100{
+        margin-bottom: 25rem;
+    }
     footer{
         background-color: #fff;
         padding: 10px 15px 30px 15px;
@@ -388,7 +471,7 @@
     .page-head{
         margin-bottom: 36px;
     }
-    .page-head > a > .back-button{
+    .page-head > a > .back-button, .page-head > .b > a > .back-button{
         align-items: center;
         background-color: #FFF;
         border-radius: 8px;
@@ -399,6 +482,8 @@
         justify-content: center;
         margin-bottom: 22px;
         width: 40px;
+        position: relative;
+        z-index: 10;
     }
     .page-heading-text{
         font-size: 18px;
@@ -407,6 +492,20 @@
         text-align: left;
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
+        position: relative;
+        z-index: 10;
+    }
+    .p-2{
+        padding: 0.5rem;
+    }
+    .p-4{
+        padding: 1rem;
+    }
+    .p-6{
+        padding: 1.5rem;
+    }
+    .relative{
+        position: relative;
     }
     .search-bar{
         position: relative;
@@ -451,8 +550,71 @@
         margin: 0;
         font-size: 12px;
     }
+    .text-white{
+        color: white;
+    }
+    .trendy-image{
+        object-fit: contain;
+        margin-top: 20px;
+        margin-bottom: 2px;       
+    }
+    .trendy-talks{
+        background-color: white;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+    .trendy-talks > .box{
+        align-items: start;
+        display: flex;
+        gap: 8px;
+    }
+    .trendy-talks > .box > div:first-child{
+        align-items: center;
+        background-color: #1D0387;
+        border-radius: 4px;
+        color: white;
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+        gap: 0px;
+        height: 24px;
+        justify-content: center;
+        line-height: 12px;
+        padding: 12px 10px;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .trendy-talks > .box > div:nth-child(2){
+        margin-top: -4px;
+    }
+    .trendy-talks > .box > div:nth-child(2) > h3{
+        color: #00001E;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .trendy-talks > .box > div:nth-child(2) > p{
+        color: #6B6767;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+
+    }
     .w-full{
         width: 100%;
+    }
+    .w-fit{
+        width: fit-content;
     }
     .welcome-head{
         display: flex;
