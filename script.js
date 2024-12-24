@@ -46,6 +46,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+
 document.querySelector('.scroll-items:nth-child(4)').addEventListener('click', function() {
   window.location.href = 'gettingToKnow.html';
 });

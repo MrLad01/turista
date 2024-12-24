@@ -107,6 +107,23 @@
         justify-content: center;
         width: 24px;
     }
+    .broken-lines{
+        align-items: center;
+        gap: 8px;
+        justify-content: center;
+        width: 100%;
+    }
+    .broken-lines > div{
+        background-color: #F0F0F0;
+        border: 2px solid #dddbdb;
+        border-radius: 8px;
+        height: 4px;
+        width: 8px;
+    }
+    .broken-lines > .first{
+        background-color: #FD226E;
+        border: 2px solid #FD226E;
+    }
     .butland{
         color: #898787;
     }
@@ -177,6 +194,10 @@
         align-items: center;
         justify-content: space-between;
     }
+    .chat-icon{
+        min-width: 42px;
+        height: 42px;
+    }
     .controls-container {
         align-items: center;
         display: flex;
@@ -219,6 +240,82 @@
         background-color: white;
         transition: .3s;
         border-radius: 50%;
+    }
+    .discover-page{
+        padding: 0;
+        margin: 0;
+        margin-left: -15px;
+    }
+    .discover{
+        height: 320px;
+        border-top-left-radius: 32px;
+        border-top-right-radius: 32px;
+        width: 376px;
+        overflow: hidden;
+        position: relative;
+    }
+    .discover > .close-icon{
+        cursor: pointer;
+        position: absolute;
+        padding: 6px;
+        right: 24px;
+        top: 24px;
+    }
+    .discover > .img-back{
+        height: 320px;
+        object-fit: fill;
+        width: 376px;
+    }
+    .discover-body{
+        background-color: white;
+        padding: 30px 12px;
+        width: 105%;
+    }
+    .discover-body > button{
+        background-color: #FD226E;
+        border: none;
+        border-radius: 28px;
+        box-shadow: 0px 2px 8px 0px #88888829;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        margin-top: 30px;
+        padding: 16px;
+        text-align: center;
+        text-decoration-skip-ink: none;
+        text-underline-position: from-font;
+        width: 100%;
+    }
+    .discover-body > h3{
+        color: #1D0387;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 24px;
+        margin-bottom: 18px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .discover-body > h4{
+        color: #00001E;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18px;
+        margin-bottom: 18px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .discover-body > p{
+        color: #00001E;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+        margin-bottom: 18px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
     }
     input:checked + .controls-slider {
         background-color: #2196F3;
@@ -331,6 +428,40 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
     }
+    .explore-analysis-body{
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+    .explore-analysis{
+        background-color: white;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding: 16px;
+    }
+    .explore-analysis > h2{
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .explore-analysis > h5{
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .explore-analysis-cover{
+        background-color: white;
+        border-radius: 12px;
+        padding: 12px 12px 12px 0;
+        margin-bottom: 30px;
+    }
     .explore-background{
         margin-left: -7.6px; 
         position: absolute;
@@ -382,9 +513,58 @@
     .explore-content > p > a {
         color: #FD226E;
         text-decoration: none;
+    }
+    .explore-didyouknow{
+        background-color: #EAECEF;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+        margin-bottom:20px;
     } 
     .explore-head{
         height: 24rem;
+    }
+    .explore-iconic{
+        margin-bottom: 30px;
+    }
+    .explore-iconic > h3{
+        color: #00001E;
+        line-height: 24px;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: left;
+        text-decoration-skip-ink: none;
+        text-underline-position: from-font;
+    }   
+    .explore-iconic > .images-cover{
+        gap: 10px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .explore-iconic > .images-cover > div{
+        box-shadow: 0px 2px 4px 0px #88888829;
+        height: 88px;
+        width: 88px;
+        padding: 0;
+    }
+    .explore-local > h3, .port > h3{
+        color: #1D0387;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 18px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .explore-local > p, .port > div > i{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
     }
     .flex{
         display: flex;
@@ -400,6 +580,12 @@
     }
     .items-center{
         align-items: center;
+    }
+    .items-start{
+        align-items: start;
+    }
+    .justify-between{
+        justify-content: space-between;
     }
     .land-scroll {
         display: flex;
@@ -439,6 +625,9 @@
     main{
         margin-bottom: 20px;
         flex: 1;  
+    }
+    .mb-6{
+        margin-bottom: 1.5rem;
     }
     .mb-10{
         margin-bottom: 2.5rem;
@@ -504,6 +693,22 @@
     .p-6{
         padding: 1.5rem;
     }
+    .port > div{
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    .plus-sign{
+        height: 40px;
+        width: 40px;
+    }
+    .port > div > p{
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
     .relative{
         position: relative;
     }
@@ -556,7 +761,76 @@
     .trendy-image{
         object-fit: contain;
         margin-top: 20px;
-        margin-bottom: 2px;       
+        margin-bottom: 2px;
+        position: absolute;
+        z-index: -1;     
+    }
+    .trendy-image-case{
+        height: 354px;
+    }
+    .trendy-image-case > .first{
+        top: 110px;
+    }
+    .trendy-image-case > .first > h6{
+        top: 16px;
+        right: 24px;
+        background-color: #1D0387;
+        border-radius: 4px;
+        color: white;
+        display: flex;
+        padding: 3px 6px;
+    }
+    .trendy-image-case > .second{
+        bottom: 114px;
+        left: 100px;
+    }
+    .trendy-image-case > .second > h6{
+        top: 16px;
+        left: 12px;
+        background-color: #1D0387;
+        border-radius: 4px;
+        color: white;
+        display: flex;
+        padding: 3px 6px;
+    }
+    .trendy-image-case > .third{
+        bottom: 48px;
+        left: 112px;
+    }
+    .trendy-image-case > .third > h6{
+        bottom: 28px;
+        left: 12px;
+        background-color: #1D0387;
+        border-radius: 4px;
+        color: white;
+        display: flex;
+        padding: 3px 6px;
+    }
+    .trendy-image-case > .fourth{
+        bottom: 44px;
+        left: 175px;
+    }
+    .trendy-image-case > .fourth > h6{
+        bottom: 34px;
+        right: 20px;
+        background-color: #1D0387;
+        border-radius: 4px;
+        color: white;
+        display: flex;
+        padding: 3px 6px;
+    }
+    .trendy-image-case > .fifth{
+        bottom: 74px;
+        left: 230px;
+    }
+    .trendy-image-case > .fifth > h6{
+        bottom: 24px;
+        right: 10px;
+        background-color: #1D0387;
+        border-radius: 4px;
+        color: white;
+        display: flex;
+        padding: 3px 6px;
     }
     .trendy-talks{
         background-color: white;
@@ -565,11 +839,13 @@
         flex-direction: column;
         gap: 16px;
         padding: 20px;
+       margin-bottom:20px;
     }
     .trendy-talks > .box{
         align-items: start;
         display: flex;
         gap: 8px;
+        
     }
     .trendy-talks > .box > div:first-child{
         align-items: center;
@@ -609,6 +885,15 @@
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
 
+    }
+    .usefulportuguese{
+        background-color: #EAECEF;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+        margin-bottom:20px;
     }
     .w-full{
         width: 100%;
