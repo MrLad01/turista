@@ -194,6 +194,68 @@
         align-items: center;
         justify-content: space-between;
     }
+    .card-location{
+        margin-bottom: 30px;
+    }
+    .card-location > h4{
+        color: #00001E;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 16px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .card-location > div > img{
+        height: 160px;
+        width: 100%;
+    }
+    .card-location > div > div{
+        background-color: white;
+        border-bottom-left-radius: 14px;
+        border-bottom-right-radius: 14px;
+        padding: 14px;
+        position: relative;
+    }
+    .card-location > div > div > div > button{
+        background: none;
+        bottom: 20px;
+        border: none;
+        color: #FD226E;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 16px;
+        margin-bottom: 6px;
+        margin-top: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+    .card-location > div > div > p{
+        color: #00001E;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        margin-bottom: 20px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        width: 296px;
+    }
+    .card-location > div > div > div{
+        gap: 6px;
+        margin-bottom: 4px;
+    }
+    .card-location > div > div > div > h4{
+        color: #00001E;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        text-align: left;
+        text-decoration-skip-ink: none;
+        text-underline-position: from-font;
+    }
     .chat-icon{
         min-width: 42px;
         height: 42px;
@@ -586,6 +648,9 @@
     }
     .justify-between{
         justify-content: space-between;
+    }
+    .justify-end{
+        justify-content: end;
     }
     .land-scroll {
         display: flex;
