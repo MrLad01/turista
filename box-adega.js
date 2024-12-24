@@ -1,3 +1,68 @@
+// Shared utilities
+const storage = {
+    getKey: (page) => `visit_count_${page}`,
+    increment: (page) => {
+        const key = storage.getKey(page);
+        const count = parseInt(localStorage.getItem(key)) || 0;
+        localStorage.setItem(key, (count + 1).toString());
+        return count + 1;
+    },
+    getCount: (page) => parseInt(localStorage.getItem(storage.getKey(page))) || 0
+};
+
+// Get current page name from URL or filename
+function getCurrentPage() {
+    const path = window.location.pathname;
+    return path.split('/').pop().split('.')[0];
+}
+
+// Handle first visit modal
+function handleFirstVisit(page) {
+    if (!localStorage.getItem(storage.getKey(page))) {
+        const modal = document.getElementById('what-modal');
+        const closeBtn = document.querySelector('.what-close-button');
+        const okButton = document.querySelector('.what-modal-ok-button');
+        
+        document.getElementById('what-modal-title').textContent = "Toby shared this experience with you!";
+        document.getElementById('what-modal-body').innerHTML = `
+            <div style="text-align: center; margin: 20px 0;">
+                <span style="font-size: 48px;">🤩</span>
+            </div>
+            <p style="text-align: center;">Let's dive into Lisbon together and uncover the city's hidden wonders. Your adventure awaits!</p>
+        `;
+        
+        modal.style.display = "block";
+        
+        const closeModal = () => {
+            modal.style.display = "none";
+            storage.increment(page);
+        };
+        
+        closeBtn.onclick = closeModal;
+        okButton.onclick = closeModal;
+        window.onclick = (event) => {
+            if (event.target === modal) closeModal();
+        };
+    } else {
+        storage.increment(page);
+    }
+}
+
+// Navigation handling
+function handleNavigation(page) {
+    const backButton = document.querySelector('.codfish-back-button');
+    if (backButton && storage.getCount(page) >= 2) {
+        backButton.style.display = 'none';
+    }
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    const currentPage = getCurrentPage();
+    handleFirstVisit(currentPage);
+    handleNavigation(currentPage);
+});
+
 // Toggle information box content
 let currentInfoIndex = 0;
 const infoTexts = [
