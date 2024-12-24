@@ -2,51 +2,103 @@ function duplicateItems() {
     const container = document.querySelector('.scroll-container');
     const items = container.querySelectorAll('.scroll-items');
     
-    // Clone all items and append them to create a seamless loop
     items.forEach(item => {
       const clone = item.cloneNode(true);
       container.appendChild(clone);
     });
 }
 
-// Initialize the scroll
 duplicateItems();
 
-// Get modal elements
-const modal = document.getElementById("tobyModal");
+// First modal (Toby's modal)
+const tobyModal = document.getElementById("tobyModal");
 const welcomeLink = document.querySelector(".welcome-link");
-const closeBtn = document.querySelector(".welcome-close");
+const welcomeCloseBtn = document.querySelector(".welcome-close");
 
-// Open modal when clicking the welcome link
 welcomeLink.onclick = function(e) {
     e.preventDefault();
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+    tobyModal.style.display = "block";
+    document.body.style.overflow = "hidden";
 }
 
-// Close modal when clicking the close button
-closeBtn.onclick = function() {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto"; // Restore scrolling
+welcomeCloseBtn.onclick = function() {
+    tobyModal.style.display = "none";
+    document.body.style.overflow = "auto";
 }
 
-// Close modal when clicking outside of it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto"; // Restore scrolling
-    }
-}
-
-// Close modal when pressing ESC key
-document.addEventListener('keydown', function(event) {
-    if (event.key === "Escape") {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto"; // Restore scrolling
-    }
-});
-
-
+// Fourth item click handler
 document.querySelector('.scroll-items:nth-child(4)').addEventListener('click', function() {
   window.location.href = 'gettingToKnow.html';
+});
+
+document.querySelector('.seven-cod').addEventListener('click', function() {
+  window.location.href = 'codfish-detail.html';
+});
+
+document.querySelector('.wine-alchemist').addEventListener('click', function() {
+  window.location.href = 'wine-alchemist-details.html';
+});
+
+document.querySelector('.toast-fado').addEventListener('click', function() {
+  window.location.href = 'cafe-luso-details.html';
+});
+
+document.querySelector('.adega-machado').addEventListener('click', function() {
+  window.location.href = 'adega-details.html';
+});
+document.querySelector('.box-adega').addEventListener('click', function() {
+  window.location.href = 'box-adega-details.html';
+});
+
+// Filter modal
+const filterModal = document.getElementById("filterModal");
+const controlsIcon = document.querySelector(".controls-icon"); // Changed from getElementById
+const filterCloseBtn = document.querySelector(".filter-close"); // Renamed to avoid conflict
+const applyButton = document.querySelector(".filter-apply-button");
+const filterOptions = document.querySelectorAll(".filter-option");
+
+controlsIcon.onclick = function() {
+    filterModal.style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+filterCloseBtn.onclick = function() {
+    filterModal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+// Modified window click handler to handle both modals
+window.onclick = function(event) {
+    if (event.target == tobyModal) {
+        tobyModal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+    if (event.target == filterModal) {
+        filterModal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+}
+
+filterOptions.forEach(option => {
+    option.addEventListener('click', function() {
+        this.classList.toggle('filter-selected');
+        applyButton.style.opacity = "1";
+    });
+});
+
+applyButton.onclick = function() {
+    const selectedFilters = document.querySelectorAll('.filter-option.filter-selected');
+    const filters = Array.from(selectedFilters).map(filter => filter.textContent);
+    console.log('Selected filters:', filters);
+    filterModal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+// Modified keydown handler to handle both modals
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        tobyModal.style.display = "none";
+        filterModal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
 });
